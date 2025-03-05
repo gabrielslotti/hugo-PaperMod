@@ -1,5 +1,119 @@
 {{- with site.Params.homeInfoParams }}
+<article class="article-cover">
+    <header class="entry-header home-info">
+        <style>
+            .article-cover {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                min-height: 220px;
+
+            }
+
+            .blog-cover {
+                /* background: #1111118a; */
+                background: var(--cover-color);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 15px; /* Deixa as bordas arredondadas */
+                padding: 20px;
+            }
+            
+            .cover-container {
+                display: flex;
+                align-items: center;
+                gap: 2.5rem;
+                padding: 0.5rem;
+            }
+            
+            .cover-logo {
+                display: flex;
+                gap: 1.2rem;
+                transform: rotate(-5deg);
+            }
+            
+            .cover-bar {
+                width: 14px;
+                height: 80px;
+                background: #daa520;
+                transform: skewX(15deg);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                opacity: 0.9;
+                box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            }
+            
+            .cover-bar:nth-child(1) {
+                opacity: 0.8;
+                height: 70px;
+                margin-top: 5px;
+            }
+            
+            .cover-bar:nth-child(2) {
+                opacity: 1;
+                height: 90px;
+            }
+            
+            .cover-bar:nth-child(3) {
+                opacity: 0.6;
+                height: 65px;
+                margin-top: 8px;
+            }
+            
+            .cover-title {
+                font-size: 2.4rem;
+                font-weight: 500; /* PaperMod usa 500 para títulos */
+                letter-spacing: -0.02em; /* Estilo mais condensado */
+                position: relative;
+                padding-left: 1.5rem;
+                margin: 0;
+                line-height: 1.2;
+            }
+            
+            .cover-title::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                height: 60%;
+                width: 3px;
+                background: #daa520;
+                border-radius: 2px;
+            }
+            
+            .cover-bar:hover {
+                transform: skewX(15deg) translateY(-4px);
+                opacity: 1;
+                box-shadow: 3px 3px 12px rgba(218, 165, 32, 0.2);
+            }
+        
+        </style>
+    </head>
+    <div class="blog-cover">
+        <div class="cover-container">
+            <div class="cover-logo">
+                <div class="cover-bar"></div>
+                <div class="cover-bar"></div>
+                <div class="cover-bar"></div>
+            </div>
+            <h1 class="cover-title">Escatologicamente</h1>
+        </div>
+    </div>
+</article>
+
 <article class="first-entry home-info">
+    <style>
+        .first-entry {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 220px;
+            margin: 0;
+        }
+    </style>
     <header class="entry-header">
         <h1>{{ .Title | markdownify }}</h1>
     </header>
